@@ -1,6 +1,6 @@
 {
-  "name": "electronproject",
-  "version": "1.0.1",
+  "name": "desktop-text-previewer",
+  "version": "1.0.3",
   "description": "",
   "main": "main.js",
   "scripts": {
