@@ -1,5 +1,41 @@
 const { app, BrowserWindow, dialog} = require('electron')
+const {autoUpdater} = require('electron-updater')
+const isDev = require('electron-is-dev')
 const fs = require('fs')
+
+
+// Setup the autoUpdater
+
+autoUpdater.logger = require('electron-log')
+autoUpdater.logger.transports.file.level = 'info'
+
+// Setup the event listeners for autoUpdater;
+autoUpdater.on('checking-for-update', () => {
+    console.log('Checking for updates...')
+})
+
+autoUpdater.on('update-available', (info) => {
+    console.log('Update avaiable')
+    console.log('Version', info.version)
+    console.log('Release data', info.releaseDate)
+})
+
+autoUpdater.on('update-not-available', () => {
+    console.log('Update not available');
+})
+
+autoUpdater.on('download-progress', (progress) => {
+    console.log(`Progress ${Math.floor(progress.percent)}`)
+})
+
+autoUpdater.on('update-downloaded', (info) => {
+    console.log('Update downloaded')
+    autoUpdater.quitAndInstall()
+})
+
+autoUpdater.on('error', (error) => {
+    console.log(error)
+})
 
 // electron can actuall interact with a lot of desktop feature even include the support for the the touch bar feature your can find in the new macbook.
 
