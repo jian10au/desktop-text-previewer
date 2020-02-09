@@ -48,6 +48,9 @@ let mainWindow = null;
 // notice below actually is the show 
 app.on('ready',() => {
     console.log('The App is Ready')
+    if(!isDev) {
+        autoUpdater.checkForUpdates();
+    }
     mainWindow = new BrowserWindow(
         {show:false,
         webPreferences:{
@@ -71,6 +74,7 @@ app.on('ready',() => {
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
     })
+
 })
 
 const getFileFromUser = () => {
