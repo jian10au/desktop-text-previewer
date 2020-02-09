@@ -1,15 +1,16 @@
 {
-  "name": "electronproject",
+  "name": "desktop-text-previewer",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder build"
   },
   "repository": {
-    "type":"git",
-    "url":"https://github.com/jian10au/desktop-text-previewer.git"
+    "type": "git",
+    "url": "https://github.com/jian10au/desktop-text-previewer.git"
   },
   "keywords": [],
   "author": "",
@@ -19,9 +20,9 @@
     "marked": "^0.8.0"
   },
   "devDependencies": {
-    "electron": "^8.0.0",
     "babel-eslint": "^10.0.3",
     "devtron": "^1.4.0",
+    "electron": "^8.0.0",
     "electron-builder": "^22.3.2",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^4.0.6",
